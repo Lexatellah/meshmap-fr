@@ -8,13 +8,7 @@ DB_PATH = BASE_DIR / "data" / "meshmap.db"
 
 app = Flask(__name__)
 
-# Initialize and seed the DB on module import so gunicorn/Render picks it up.
-# Wrapped in try/except so a transient DB error doesn't crash the app.
-try:
-    init_db()
-    seed_if_empty()
-except Exception as e:
-    print(f"[meshmap] DB init warning: {e}", flush=True)
+
 
 
 def get_db():
@@ -125,8 +119,13 @@ def about():
     return render_template("about.html")
 
 
+
+# Run init + seed at module level so gunicorn picks them up (no __main__).
+init_db()
+seed_if_empty()
 if __name__ == "__main__":
     init_db()
     seed_if_empty()
     print("MeshMap FR running on http://127.0.0.1:5000")
     app.run(host="127.0.0.1", port=5000, debug=True)
+
