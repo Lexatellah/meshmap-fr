@@ -1,1 +1,1 @@
-Flask==3.0.3
+Flask==3.0.3gunicorn>=21.0.0
