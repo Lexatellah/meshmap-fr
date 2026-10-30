@@ -46,7 +46,7 @@ def seed_if_empty():
     if count == 0:
         seed_file = BASE_DIR / "data" / "seed_networks.json"
         if seed_file.exists():
-            data = json.loads(seed_file.read_text(encoding="utf-8"))
+            data = json.loads(seed_file.read_text(encoding="utf-8-sig"))
             for n in data:
                 conn.execute("""
                     INSERT INTO networks
@@ -129,5 +129,6 @@ if __name__ == "__main__":
     seed_if_empty()
     print("MeshMap FR running on http://127.0.0.1:5000")
     app.run(host="127.0.0.1", port=5000, debug=True)
+
 
 

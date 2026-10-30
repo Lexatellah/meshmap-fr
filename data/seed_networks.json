@@ -1,4 +1,4 @@
-﻿[
+[
   { "name": "FDN — French Data Network", "city": "Paris", "region": "Île-de-France", "lat": 48.8566, "lon": 2.3522, "status": "active", "nodes": 0, "website": "https://www.fdn.fr/", "contact": "contact@fdn.fr", "description": "Fournisseur d'accès associatif historique, défenseur de la neutralité du net." },
   { "name": "Tetaneutral.net", "city": "Toulouse", "region": "Occitanie", "lat": 43.6047, "lon": 1.4442, "status": "active", "nodes": 0, "website": "https://tetaneutral.net/", "contact": "contact@tetaneutral.net", "description": "FAI associatif et hébergeur, très actif dans le mesh et le libre." },
   { "name": "Aquilenet", "city": "Bordeaux", "region": "Nouvelle-Aquitaine", "lat": 44.8378, "lon": -0.5792, "status": "active", "nodes": 0, "website": "https://www.aquilenet.fr/", "contact": "contact@aquilenet.fr", "description": "FAI associatif en Gironde, fibre et services libres." },
