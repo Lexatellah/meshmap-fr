@@ -1,5 +1,7 @@
 ﻿# MeshMap FR
 
+**Live demo: https://meshmap-fr.onrender.com**
+
 Carte communautaire des rÃ©seaux mesh, associatifs et alternatifs en France.
 
 **Objectif :** rendre visibles les initiatives lÃ©gales qui rÃ©duisent le coÃ»t d'accÃ¨s Ã  Internet et la dÃ©pendance aux gros FAI.
@@ -48,4 +50,5 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python app.py
+
 
