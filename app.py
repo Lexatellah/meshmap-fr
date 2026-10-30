@@ -1,4 +1,5 @@
-﻿import json
+﻿# MeshMap FR — production entry point
+import json
 import sqlite3
 from pathlib import Path
 from flask import Flask, render_template, request, jsonify, abort
@@ -128,4 +129,5 @@ if __name__ == "__main__":
     seed_if_empty()
     print("MeshMap FR running on http://127.0.0.1:5000")
     app.run(host="127.0.0.1", port=5000, debug=True)
+
 
