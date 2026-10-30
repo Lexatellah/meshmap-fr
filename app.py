@@ -1,4 +1,4 @@
-import json
+﻿import json
 import sqlite3
 from pathlib import Path
 from flask import Flask, render_template, request, jsonify, abort
@@ -7,6 +7,14 @@ BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "data" / "meshmap.db"
 
 app = Flask(__name__)
+
+# Initialize and seed the DB on module import so gunicorn/Render picks it up.
+# Wrapped in try/except so a transient DB error doesn't crash the app.
+try:
+    init_db()
+    seed_if_empty()
+except Exception as e:
+    print(f"[meshmap] DB init warning: {e}", flush=True)
 
 
 def get_db():
