@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Ajouter un réseau — MeshMap FR{% endblock %}
+{% block content %}
+<section class="form-wrap">
+  <h1>Ajouter un réseau</h1>
+  <p class="muted">Remplis les champs, puis clique sur la carte pour choisir l'emplacement.</p>
+  <form id="submit-form">
+    <label>Nom *<input name="name" required></label>
+    <label>Ville *<input name="city" required></label>
+    <label>Région<input name="region"></label>
+    <label>Latitude *<input name="lat" id="lat" required readonly></label>
+    <label>Longitude *<input name="lon" id="lon" required readonly></label>
+    <label>Nœuds<input name="nodes" type="number" min="0" value="0"></label>
+    <label>Site web<input name="website" type="url" placeholder="https://"></label>
+    <label>Contact<input name="contact"></label>
+    <label>Description<textarea name="description" rows="3"></textarea></label>
+    <div id="map-picker"></div>
+    <button type="submit">Envoyer</button>
+    <p id="form-msg" class="muted"></p>
+  </form>
+</section>
+{% endblock %}
+{% block scripts %}
+<script>
+const picker = L.map('map-picker').setView([46.6, 2.4], 5);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19, attribution: '&copy; OpenStreetMap'
+}).addTo(picker);
+let marker = null;
+picker.on('click', e => {
+  if (marker) picker.removeLayer(marker);
+  marker = L.marker(e.latlng).addTo(picker);
+  document.getElementById('lat').value = e.latlng.lat.toFixed(6);
+  document.getElementById('lon').value = e.latlng.lng.toFixed(6);
+});
+
+document.getElementById('submit-form').addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  const fd = new FormData(ev.target);
+  const data = Object.fromEntries(fd.entries());
+  const msg = document.getElementById('form-msg');
+  msg.textContent = 'Envoi…';
+  try {
+    const r = await fetch('/api/networks', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || 'Erreur');
+    msg.textContent = 'Ajouté ! Redirection…';
+    window.location = '/network/' + j.id;
+  } catch (e) {
+    msg.textContent = 'Erreur : ' + e.message;
+  }
+});
+</script>
+{% endblock %}

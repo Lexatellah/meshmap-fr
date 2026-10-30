@@ -1,0 +1,52 @@
+:root {
+  --bg: #0f1115;
+  --fg: #e8ecf1;
+  --muted: #8b95a3;
+  --accent: #4ea1ff;
+  --card: #171b22;
+  --border: #232833;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.5;
+}
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; background: var(--bg); z-index: 1000;
+}
+.brand { font-weight: 700; color: var(--fg); text-decoration: none; letter-spacing: .5px; }
+nav a { color: var(--muted); margin-left: 1rem; text-decoration: none; }
+nav a:hover { color: var(--accent); }
+main { padding: 1.5rem; max-width: 1100px; margin: 0 auto; }
+footer { padding: 2rem 1.5rem; color: var(--muted); border-top: 1px solid var(--border); margin-top: 2rem; }
+h1, h2 { line-height: 1.2; }
+a { color: var(--accent); }
+.muted { color: var(--muted); }
+.hero { margin-bottom: 1rem; }
+.stats { color: var(--muted); font-size: .95rem; }
+#map { height: 480px; border-radius: 12px; margin: 1rem 0; border: 1px solid var(--border); }
+#map-picker { height: 300px; border-radius: 8px; margin: .5rem 0; border: 1px solid var(--border); }
+.list ul { list-style: none; padding: 0; }
+.list li { padding: .6rem .8rem; border: 1px solid var(--border); border-radius: 8px; margin-bottom: .5rem; background: var(--card); }
+.list li a { color: var(--fg); text-decoration: none; }
+.list li a:hover { color: var(--accent); }
+.form-wrap form { display: flex; flex-direction: column; gap: .6rem; max-width: 560px; }
+label { display: flex; flex-direction: column; font-size: .9rem; color: var(--muted); gap: .25rem; }
+input, textarea {
+  background: var(--card); border: 1px solid var(--border); color: var(--fg);
+  border-radius: 6px; padding: .5rem .6rem; font: inherit;
+}
+button {
+  background: var(--accent); color: #06111f; border: 0; border-radius: 6px;
+  padding: .7rem 1rem; font-weight: 600; cursor: pointer; margin-top: .5rem;
+}
+button:hover { filter: brightness(1.1); }
+.facts { list-style: none; padding: 0; }
+.facts li { padding: .3rem 0; border-bottom: 1px dashed var(--border); }
+.prose { max-width: 720px; }

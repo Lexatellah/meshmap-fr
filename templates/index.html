@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Carte des réseaux mesh en France{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>Réseaux mesh &amp; alternatifs en France</h1>
+  <p>Carte communautaire des initiatives qui réduisent le coût et la dépendance aux gros FAI.</p>
+  <div class="stats" id="stats">Chargement…</div>
+</section>
+<div id="map"></div>
+<section class="list">
+  <h2>Réseaux référencés</h2>
+  <ul id="network-list"></ul>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+{% endblock %}

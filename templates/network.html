@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ network.name }} — MeshMap FR{% endblock %}
+{% block content %}
+<article class="detail">
+  <h1>{{ network.name }}</h1>
+  <p class="muted">{{ network.city }}{% if network.region %}, {{ network.region }}{% endif %}</p>
+  <ul class="facts">
+    <li><strong>Statut :</strong> {{ network.status }}</li>
+    <li><strong>Nœuds :</strong> {{ network.nodes }}</li>
+    {% if network.website %}<li><strong>Site :</strong> <a href="{{ network.website }}" rel="noopener noreferrer" target="_blank">{{ network.website }}</a></li>{% endif %}
+    {% if network.contact %}<li><strong>Contact :</strong> {{ network.contact }}</li>{% endif %}
+    <li><strong>Coordonnées :</strong> {{ network.lat }}, {{ network.lon }}</li>
+  </ul>
+  {% if network.description %}<p>{{ network.description }}</p>{% endif %}
+  <p><a href="/">← Retour à la carte</a></p>
+</article>
+{% endblock %}

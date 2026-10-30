@@ -1,0 +1,74 @@
+[
+  {
+    "name": "FDN — French Data Network",
+    "city": "Paris",
+    "region": "Ile-de-France",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "status": "active",
+    "nodes": 0,
+    "website": "https://www.fdn.fr/",
+    "contact": "contact@fdn.fr",
+    "description": "Fournisseur d'acces associatif historique, defenseur de la neutralite du net."
+  },
+  {
+    "name": "Tetaneutral.net",
+    "city": "Toulouse",
+    "region": "Occitanie",
+    "lat": 43.6047,
+    "lon": 1.4442,
+    "status": "active",
+    "nodes": 0,
+    "website": "https://tetaneutral.net/",
+    "contact": "contact@tetaneutral.net",
+    "description": "FAI associatif et hebergeur, tres actif dans le mesh et le libre."
+  },
+  {
+    "name": "Aquilenet",
+    "city": "Bordeaux",
+    "region": "Nouvelle-Aquitaine",
+    "lat": 44.8378,
+    "lon": -0.5792,
+    "status": "active",
+    "nodes": 0,
+    "website": "https://www.aquilenet.fr/",
+    "contact": "contact@aquilenet.fr",
+    "description": "FAI associatif en Gironde, fibre et services libres."
+  },
+  {
+    "name": "Ilico",
+    "city": "Grenoble",
+    "region": "Auvergne-Rhone-Alpes",
+    "lat": 45.1885,
+    "lon": 5.7245,
+    "status": "active",
+    "nodes": 0,
+    "website": "https://www.ilico.org/",
+    "contact": "contact@ilico.org",
+    "description": "FAI associatif a Grenoble."
+  },
+  {
+    "name": "Rezine",
+    "city": "Marseille",
+    "region": "Provence-Alpes-Cote d'Azur",
+    "lat": 43.2965,
+    "lon": 5.3698,
+    "status": "active",
+    "nodes": 0,
+    "website": "https://www.rezine.org/",
+    "contact": "contact@rezine.org",
+    "description": "FAI associatif marseillais."
+  },
+  {
+    "name": "Guifi.net — Perpignan",
+    "city": "Perpignan",
+    "region": "Occitanie",
+    "lat": 42.6887,
+    "lon": 2.8948,
+    "status": "active",
+    "nodes": 0,
+    "website": "https://guifi.net/",
+    "contact": "",
+    "description": "Extension du reseau mesh communautaire catalan en France."
+  }
+]
